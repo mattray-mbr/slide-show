@@ -3,17 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="app.js"></script>
 </head>
 <body ng-controller="slideController">
 	<div class="container">
-		<button class="prev" ng-click="prev()"></button>
-		<div class="slides" ng-repeat="image in images">
-			<img ng-src="{{image.src}}" class="images">
+		<div class="prev glyphicon glyphicon-menu-left" ng-click="prev()"></div>
+		<div class="slides" ng-repeat="slide in images" ng-hide="!isCurrentSlideIndex($index)">
+			<img class="images img-responsive" ng-src="{{slide.src}}" >
+			<!-- nav dots -->
+			<nav class="nav-dots">
+				<ul class="dots">
+					<li class="dot" ng-repeat="slide in images">
+						<a class="circles" href="#" ng-class="{'active':isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index);">{{slide.item}}</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-		<button class="next" ng-click="next()"></button>
+		<div class="next glyphicon glyphicon-menu-right" ng-click="prev()"></div>
+		<div class="captions" ng-repeat="slide in images" ng-hide="!isCurrentSlideIndex($index)">
+			<p>{{slide.caption}}</p>
+		</div>
 	</div>
 </body>
 </html>

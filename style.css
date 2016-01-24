@@ -6,16 +6,56 @@ body {
 }
 .container {
 	width: 95%;
-	height: 100vh;
+	max-width: 1200px;
 	border: 1px solid black;
-	margin: 0 auto;
+	margin: 30px auto;
 	background-color: #ccc;
 	border-radius: 10px;
 }
 .slides {
 	margin: 0 auto;
 	border: 1px solid black;
-	height: 400px;
-	width: 400px;
+	width: 80%;
+	max-width: 980px;
 	overflow: hidden;
+	display: inline-block;
+}
+.prev {
+	display: inline-block;
+}
+.next {
+	display: inline-block;
+}
+.dots {
+	position: absolute;
+	top: 450px;
+	left: 250px;
+}
+.dot {
+	float: left;
+	margin: 10px;
+	list-style: none;
+}
+.circles {
+	text-decoration: none;
+	font-weight: bold;
+	color: #19a60c;
+	font-size: 25px;
+	font-family: Helvetica;
+}
+.active {
+	color: #000;
+}
+.captions {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.glyphicon-menu-left, .glyphicon-menu-right {
+	font-size: 60px;
+	/*visibility: hidden;*/
+}
+.glyphicon:hover {
+	visibility: visible;
+	color: #fff;
 }

@@ -7,29 +7,31 @@ Should support auto-play, which would wait a specified time before auto transiti
 Should be able to pause auto-play functionality.
 The slideshow does not need to be animated.*/
 	$scope.images = [
-		{
-			src: "img1.jpeg",
-			caption: "caption 1"
-		}, {
-			src: "img2.jpeg",
-			caption: "caption 2"
-		}, {
-			src: "img3.jpeg",
-			caption: "caption 3"
-		}, {
-			src: "img4.jpeg",
-			caption: "caption 4"
-		}, {
-			src: "img5.jpeg",
-			caption: "caption 5"
-		}]
+		{ src: "img1.jpeg", caption: "Lonely cabin with mountain backdrop", item:"O" },
+		{ src: "img2.jpeg", caption: "Beautiful lake with rolling hills", item:"O" },
+		{ src: "img3.jpeg", caption: "Frozen pond on a dreary day", item:"O" },
+		{ src: "img4.jpeg", caption: "snow covered powerlines in the afternoon", item:"O" },
+		{ src: "img5.jpeg", caption: "Sunny winter day in the forest", item:"O" },
+		]
+
+		$scope.currentIndex = 0;
+
+		$scope.setCurrentSlideIndex = function (index) {
+			$scope.currentIndex = index;
+		};
+
+		$scope.isCurrentSlideIndex = function (index) {
+			return $scope.currentIndex === index;
+		};
+
 
 		$scope.prev = function(){
-
+			$scope.currentIndex = ($scope.currentIndex < $scope.images.length - 1) ? ++$scope.currentIndex : 0;
 		}
 		$scope.next = function(){
-
+			$scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $$scope.images.length - 1;
 		}
-	
+		
+		
 
 	}]);
