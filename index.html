@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="slideShow">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-controller="slideController">
+	<div class="container">
+		<button class="prev" ng-click="prev()"></button>
+		<div class="slides" ng-repeat="image in images">
+			<img ng-src="{{image.src}}" class="images">
+		</div>
+		<button class="next" ng-click="next()"></button>
+	</div>
+</body>
+</html>

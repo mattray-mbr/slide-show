@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: #289;
+}
+.container {
+	width: 95%;
+	height: 100vh;
+	border: 1px solid black;
+	margin: 0 auto;
+	background-color: #ccc;
+	border-radius: 10px;
+}
+.slides {
+	margin: 0 auto;
+	border: 1px solid black;
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+}
